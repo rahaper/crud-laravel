@@ -21,4 +21,5 @@ Route::get('/', function () {
 Route::resource('fundmaster', FundMasterController::class);
 Route::post('fundmaster/create', [FundMasterController::class, 'create']);
 Route::get('fundmaster/edit/{id}', [FundMasterController::class, 'edit']);
+Route::get('fundmaster/delete/{id}', [FundMasterController::class, 'delete']);
 Route::post('fundmaster/update', [FundMasterController::class, 'update']);

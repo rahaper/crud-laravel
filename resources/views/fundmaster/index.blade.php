@@ -13,7 +13,12 @@
          <div class="col-md-12">
 
 
-
+            @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+            @endif
+        
             <form class="row">
 
                 <div class="col-md-2">
@@ -52,7 +57,7 @@
                                 <td>{{$record->fundCode}}</td>
                                 <td>{{$record->fundName}} / {{$record->fundTHName}}</td>
                                 <td>{{$record->fundSubTypeName}}</td>
-                                <td><a href="{{url("fundmaster/edit/{$record->fundCode}")}}" class="btn btn-primary">Edit</a> <a href="{{url("fundmaster/delete/{$record->fundCode}")}}" class="btn btn-primary">Del</a></td>
+                                <td><a href="{{url("fundmaster/edit/{$record->fundCode}")}}" class="btn btn-primary">Edit</a> <a href="{{url("fundmaster/delete/{$record->fundCode}")}}" class="btn btn-primary del" fcode="{{$record->fundCode}}">Del</a></td>
                             </tr>
                         @endforeach
                     @endif
@@ -65,4 +70,26 @@
         </div>
     </div>
 
+    <script>
+        $(document).ready(function(){
+            $(".del").on('click', function(){
+                let fundcode = $(this).attr('fcode');
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You want delete this data ?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location = '{{url("fundmaster/delete")}}/'+fundcode;
+                    }
+                })
+
+                return false;
+            })
+        });
+    </script>
 @endsection

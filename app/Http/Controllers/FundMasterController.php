@@ -123,14 +123,11 @@ class FundMasterController extends Controller
      */
     public function delete($id)
     {
-        $fundMaster = DB::table('fund_master AS fm')
-            ->select('fm.*')
-            ->where('fm.fundCode', $id)
-            ->get();
+        $fundMaster = DB::table('fund_master')->where('fundCode', '=', $id)->delete();
 
         // var_dump($fundMaster);
 
-        return view('fundMaster.edit', ['fundMaster' => $fundMaster[0]]);
+        return redirect('fundmaster/')->with('message', 'Success delete data!');
     }
 
     /**
