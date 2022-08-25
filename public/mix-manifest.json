@@ -1,6 +1,5 @@
 {
     "/js/app.js": "/js/app.js",
-    "/js/jquery.min.js": "/js/jquery.min.js",
-    "/js/dashboard.js": "/js/dashboard.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/js/template.js": "/js/template.js"
 }

@@ -15,3 +15,8 @@ mix.js('resources/js/app.js', 'public/js')
 .postCss('resources/css/app.css', 'public/css', [
     //
 ]);
+
+mix.scripts([
+    'resources/js/jquery.min.js',
+    'resources/js/sweetalert.js',
+], 'public/js/template.js');

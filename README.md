@@ -14,5 +14,5 @@ Laravel 8 continues the improvements made in Laravel 7.x by introducing Laravel 
 
 
 ## My Learning Obstacles
-- Difficult to include javascript or css into blade, need to install <a href="https://laravel.com/docs/8.x/mix">mix()</a> or create .htaccess inside parent directory as like this advice in <a href="https://stackoverflow.com/questions/28364496/laravel-5-remove-public-from-url/53516975#53516975">stack overflow</a>
+- Difficult to include javascript or css into blade, need to install <a href="https://laravel.com/docs/8.x/mix">mix()</a> or use asset() by creating .htaccess inside parent directory as like this advice in <a href="https://stackoverflow.com/questions/28364496/laravel-5-remove-public-from-url/53516975#53516975">stack overflow</a>
 
